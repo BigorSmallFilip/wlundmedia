@@ -1,0 +1,114 @@
+
+:root {
+	--col-acc0: #ffa31a;
+	--col-acc1: #6a49ff;
+	--col-background: #eeeeee;
+	--col-back0: #9fb2d4;
+	--col-back1: #b099bd;
+	--col-profile0: #e0b986;
+	--col-profile1: #b1db8f;
+	--col-profile2: #97d4ca;
+	--col-g0: #1b1b1b;
+	--col-g1: #292929;
+	--col-g2: #808080;
+}
+
+/* Dark mode */
+@media (prefers-color-scheme: dark) {
+	* {
+		--col-acc0: #ffa31a;
+		--col-back0: #1b1b1b;
+	}
+}
+
+
+
+@font-face {
+	font-family: LatoHeavy;
+	src: url("../Lato-Heavy.ttf");
+}
+
+
+
+body {
+	margin: 0;
+	padding: 0;
+
+	background-color: var(--col-background);
+
+	color: var(--col-g0);
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	font-size: 20px;
+}
+
+h1 {
+	margin: 0;
+}
+
+p {
+	margin: 32px;
+}
+
+header {
+	margin-bottom: 30px;
+	padding: 16px;
+	background-color: var(--col-acc0);
+	color: var(--col-g0);
+	font-family: LatoHeavy;
+	font-size: 50px;
+}
+
+
+
+/* If a div is right before a section element, become the tilted transition */
+.tilted-section > div:first-child {
+	width: 100%;
+	height: var(--tsize);
+	background: linear-gradient(to bottom var(--tdir), transparent calc(50% - 1px), var(--color) calc(50% + 1px));
+}
+
+.tilted-section > section {
+	background-color: var(--color);
+	overflow: hidden;
+	text-align: center;
+}
+
+/* If a div is right after a section element, become the tilted transition */
+.tilted-section > div:last-child {
+	width: 100%;
+	height: var(--bsize);
+	background: linear-gradient(to top var(--bdir), transparent calc(50% - 1px), var(--color) calc(50% + 1px));
+}
+
+
+
+
+
+#profile-row {
+	margin: 40px 7vw;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	gap: 40px;
+}
+
+@media (max-width: 900px) {
+	#profile-row {
+		flex-direction: column;
+	}
+}
+
+.profile {
+	margin: 0;
+	max-width: 400px;
+	width: 100%;
+	height: 400px;
+	border-radius: 10px;
+	background-color: var(--color);
+	/* box-shadow: 15px 15px; */
+	box-shadow: 0px 5px 15px 15px rgba(0, 0, 0, .2);
+}
+
+.profile img {
+	border-radius: 999999px;
+}
